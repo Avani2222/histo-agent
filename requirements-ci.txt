@@ -1,0 +1,9 @@
+# light set for CI: tests use fakes, so no torch/faiss/GPU needed
+pandas>=2.1
+scikit-learn>=1.4
+pyyaml>=6.0
+langgraph>=0.2
+langchain-core>=0.2
+pydantic>=2.6
+pytest>=8.0
+ruff>=0.4

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "histo-agent"
+version = "0.1.0"
+description = "Uncertainty-aware histopathology agent: vision model + RAG over PubMed + LangGraph, with an evaluation harness"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I"]
+ignore = ["B008"]  # FastAPI's File(...) default is the documented pattern

@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/raw/
+data/processed/
+data/index/
+artifacts/
+mlruns/
+*.pt
+*.pth
+.DS_Store
+.ipynb_checkpoints/
+node_modules/
+.pytest_cache/
+.pytest_cache/
+*.egg-info/
