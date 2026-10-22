@@ -1,0 +1,20 @@
+# Vision model config. Small defaults so it trains on a 2 GB GPU; raise batch_size/img_size on Colab/Kaggle.
+data:
+  splits_csv: data/processed/splits.csv
+  img_size: 224
+  num_workers: 2
+model:
+  name: efficientnet_b0      # timm model name; try resnet50 / convnext_tiny on a bigger GPU
+  pretrained: true
+train:
+  epochs: 1
+  batch_size: 16
+  lr: 3.0e-4
+  weight_decay: 1.0e-4
+  amp: true
+  seed: 42
+  early_stop_patience: 4
+eval:
+  target_sensitivity: 0.95   # threshold is picked on validation to hit this sensitivity
+output:
+  dir: artifacts/vision_smoke

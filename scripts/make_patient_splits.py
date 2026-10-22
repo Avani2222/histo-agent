@@ -33,7 +33,7 @@ def parse(path: Path) -> dict:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", required=True, help="path to BreaKHis_v1")
-    ap.add_argument("--mag", default="400X", help="40X | 100X | 200X | 400X | all")
+    ap.add_argument("--mag", default="400X", choices=["40X", "100X", "200X", "400X", "all"])
     ap.add_argument("--out", default="data/processed/splits.csv")
     ap.add_argument("--seed", type=int, default=42)
     args = ap.parse_args()
@@ -44,6 +44,8 @@ def main():
     df = pd.DataFrame(parse(p) for p in files)
     if args.mag != "all":
         df = df[df.magnification == args.mag].reset_index(drop=True)
+        if df.empty:
+            raise SystemExit(f"No images at magnification {args.mag}")
 
     # ~70/15/15 by patient, stratified by label. 82 patients total, so splits are small; that is expected.
     sgkf = StratifiedGroupKFold(n_splits=7, shuffle=True, random_state=args.seed)

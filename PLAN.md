@@ -12,6 +12,8 @@ Tick items as you go. Each weekend ends with something you can show.
 - [ ] Download BreakHis (see `scripts/download_breakhis.md`) into `data/raw/BreaKHis_v1`.
 - [ ] `python scripts/make_patient_splits.py --root data/raw/BreaKHis_v1 --mag 400X`
       and note the train/val/test patient counts.
+      train 58 patients (17 B / 41 M), val 12 (4 B / 8 M), test 11 (3 B / 8 M); 1,820 images at 400X, seed 42
+
 - [ ] Train: `python -m histo_agent.vision.train`
   - On your laptop (MX550, 2 GB): keep `efficientnet_b0`, `batch_size: 16`, `img_size: 224`.
   - Faster: a free Kaggle or Colab GPU (T4). Upload `data/processed/splits.csv` + images, or use the Kaggle BreakHis dataset directly.
