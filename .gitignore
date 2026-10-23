@@ -7,6 +7,7 @@ data/processed/
 data/index/
 artifacts/
 mlruns/
+mlflow.db
 *.pt
 *.pth
 .DS_Store

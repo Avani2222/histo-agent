@@ -3,14 +3,14 @@
 Tick items as you go. Each weekend ends with something you can show.
 
 ## Setup (30 min)
-- [ ] Create a GitHub repo `histo-agent` (public) and push this folder.
-- [ ] `python -m venv .venv`, activate it, `pip install -r requirements.txt`, `pip install -e .`
-- [ ] `pytest -q` passes (tests use fakes, no data needed).
-- [ ] Copy `.env.example` to `.env`, add an LLM key (OpenRouter or OpenAI; gpt-4o-mini costs cents for this whole project).
+- [x] Create a GitHub repo `histo-agent` (public) and push this folder.
+- [x] `python -m venv .venv`, activate it, `pip install -r requirements.txt`, `pip install -e .`
+- [x] `pytest -q` passes (tests use fakes, no data needed).
+- [x] Copy `.env.example` to `.env`, add an LLM key (OpenRouter or OpenAI; gpt-4o-mini costs cents for this whole project).
 
 ## Weekend 1: vision model
-- [ ] Download BreakHis (see `scripts/download_breakhis.md`) into `data/raw/BreaKHis_v1`.
-- [ ] `python scripts/make_patient_splits.py --root data/raw/BreaKHis_v1 --mag 400X`
+- [x] Download BreakHis (see `scripts/download_breakhis.md`) into `data/raw/BreaKHis_v1`.
+- [x] `python scripts/make_patient_splits.py --root data/raw/BreaKHis_v1 --mag 400X`
       and note the train/val/test patient counts.
       train 58 patients (17 B / 41 M), val 12 (4 B / 8 M), test 11 (3 B / 8 M); 1,820 images at 400X, seed 42
 

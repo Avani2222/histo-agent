@@ -60,7 +60,7 @@ def main():
     loss_fn = torch.nn.BCEWithLogitsLoss(pos_weight=torch.tensor((1 - pos) / pos, device=device))
     opt = torch.optim.AdamW(model.parameters(), lr=t["lr"], weight_decay=t["weight_decay"])
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=t["epochs"])
-    scaler = torch.cuda.amp.GradScaler(enabled=t["amp"] and device == "cuda")
+    scaler = torch.amp.GradScaler("cuda", enabled=...)
 
     mlflow.set_experiment("histo-agent-vision")
     best_auc, bad = -1.0, 0
